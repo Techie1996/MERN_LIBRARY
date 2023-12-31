@@ -1,20 +1,24 @@
-// server.js
 require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
-const cors = require('cors'); // Make sure to require cors
+const cors = require('cors');
+const path = require('path'); // Add this line for path
 const userRoutes = require('./routes/userRoutes');
-const bookRoutes = require('./routes/bookRoutes'); // Add this line for book routes
-const Book = require('./models/Book'); // Adjust the path accordingly
-
+const bookRoutes = require('./routes/bookRoutes');
+const Book = require('./models/Book');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.use(cors()); // Enable CORS for all routes
+app.use(cors());
 app.use(express.json());
+
+// Serve static files from the 'build' folder
+app.use(express.static(path.join(__dirname, 'build')));
+
+// Handle other routes or API endpoints as needed
 app.use('/api/user', userRoutes);
-app.use('/api/book', bookRoutes); // Add this line for book routes
+app.use('/api/book', bookRoutes);
 
 mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
@@ -25,7 +29,11 @@ mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTop
     console.error('Error connecting to MongoDB:', error);
   });
 
+// Send the 'index.html' file for any other requests
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
+
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
-
