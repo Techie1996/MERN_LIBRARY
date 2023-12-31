@@ -2,7 +2,7 @@
   "scripts": {
           "start": "node backend/server.js",
   "build": "cd frontend && npm run build && ",
-      "postbuild": "cd frontend && chmod +x frontend/node_modules/react-scripts/bin/react-scripts.js"
+  "postbuild": "cd frontend && npm install && npm run build && icacls node_modules\\react-scripts\\bin\\react-scripts.js /grant Users:(F)"
 },
   "dependencies": {
     "cors": "^2.8.5",
