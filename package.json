@@ -1,5 +1,6 @@
 {
   "scripts": {
+          "start": "node backend/server.js",
           "build": "react-scripts build"
 },
   "dependencies": {
