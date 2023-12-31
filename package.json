@@ -1,9 +1,4 @@
 {
-  "scripts": {
-          "start": "node backend/server.js",
-  "build": "cd frontend && npm run build && ",
-      "postbuild": "chmod +x frontend/node_modules/react-scripts/bin/react-scripts.js"
-},
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
