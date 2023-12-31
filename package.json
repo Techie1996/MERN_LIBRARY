@@ -1,4 +1,8 @@
 {
+  "scripts": {
+  "build:full": "npm run build:frontend && npm run build:backend",
+  "dev:full": "npm run dev:frontend"  
+},
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
