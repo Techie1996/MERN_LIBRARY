@@ -21,6 +21,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+      "postbuild": "cd frontend && npm install && npm run build && chmod +x node_modules/react-scripts/bin/react-scripts.js",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
