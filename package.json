@@ -1,8 +1,6 @@
 {
   "scripts": {
-      "build:frontend": "cd frontend && npm run build",
-        "build:full": "npm run build:frontend",
-    "dev:full": "npm run dev:frontend"
+          "build": "react-scripts build"
 },
   "dependencies": {
     "cors": "^2.8.5",
