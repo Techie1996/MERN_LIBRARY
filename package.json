@@ -1,7 +1,7 @@
 {
   "scripts": {
           "start": "node backend/server.js",
-    "build": "cd frontend && npm install && npm run build && chmod +x node_modules/react-scripts/bin/react-scripts.js",
+    "build": "npm install && cd frontend && npm install && npm run build"
 },
   "dependencies": {
     "cors": "^2.8.5",
