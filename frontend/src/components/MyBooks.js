@@ -32,7 +32,8 @@ const MyBooks = ({ isAdmin }) => {
   useEffect(() => {
     // Set initial state to all books when the component mounts
     fetchBooks('');
-  });
+    // eslint-disable-next-line
+  },[]);
 
   const handleSearch = () => {
     fetchBooks(searchTerm);
