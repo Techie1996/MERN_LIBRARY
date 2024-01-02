@@ -84,3 +84,21 @@ p {
     /* Center the container on the page */
 }
 
+/* Add media query for smaller screens */
+@media screen and (max-width: 600px) {
+    .home-container {
+        max-width: 100%;
+        /* Allow full width on smaller screens */
+    }
+
+    .app-container {
+        padding: 15px;
+        /* Adjust padding for smaller screens */
+    }
+
+    input,
+    button {
+        width: 100%;
+        /* Make input and button full width on smaller screens */
+    }
+}
