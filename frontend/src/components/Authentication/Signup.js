@@ -14,7 +14,8 @@ const Signup = () => {
   const toast = useToast();
   const navigate = useNavigate();
   const handleClick = () => setShow(!show);
-
+  const baseURL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:5000';
+  const loginURL = `${baseURL}/api/user/login`;
   const submitHandler = async (e) => {
     e.preventDefault(); // Prevent the default form submission behavior
 
@@ -52,7 +53,7 @@ const Signup = () => {
       };
 
       const { data } = await axios.post(
-        'http://localhost:5000/api/user/register',
+        loginURL,
         {
           name,
           email,
