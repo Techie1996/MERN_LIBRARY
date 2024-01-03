@@ -81,7 +81,7 @@ const createAdminUser = async (req, res) => {
       return res.status(400).json({ error: 'Admin user already exists' });
     }
 
-    const salt = await bcrypt.genSalt(10);
+    const salt = await .genSalt(10);
     const hashedPassword = await bcrypt.hash('adminpassword', salt);
 
     const adminUser = new User({
