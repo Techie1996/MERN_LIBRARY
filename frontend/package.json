@@ -21,8 +21,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-        "clear-eslint-cache": "eslint --cache-location node_modules/.cache/eslint --no-eslintrc"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
