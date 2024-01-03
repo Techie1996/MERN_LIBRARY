@@ -14,7 +14,7 @@ app.use(cors());
 app.use(express.json());
 
 // Serve static files from the 'build' folder
-app.use(express.static(path.join(__dirname, '/frontend/build')));
+app.use(express.static(path.join(__dirname, '../frontend/build')));
 
 // Handle other routes or API endpoints as needed
 app.use('/api/user', userRoutes);
