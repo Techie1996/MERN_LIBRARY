@@ -23,7 +23,7 @@ const BookCard = ({ book, isAdmin, onAvailabilityChange, onTransaction }) => {
         book?.availabilityStatus === 'Available' ? 'Not Available' : 'Available';
 
       // Make a request to your server to update the availability
-      const response = await fetch(`http://localhost:5000/api/book/${book?.id}/updateAvailability`, {
+      const response = await fetch(`/api/book/${book?.id}/updateAvailability`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
