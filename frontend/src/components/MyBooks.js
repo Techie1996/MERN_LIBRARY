@@ -19,7 +19,7 @@ const MyBooks = ({ isAdmin }) => {
 
   const fetchBooks = async (query) => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/book/my-books?searchTerm=${query}`);
+      const response = await axios.get(`/api/book/my-books?searchTerm=${query}`);
       const data = response.data;
       console.log('Fetched data:', data); // Log the fetched data to see what you're getting
       setBooks(data);

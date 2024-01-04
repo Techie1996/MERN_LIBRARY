@@ -20,7 +20,7 @@ const Google = () => {
   const fetchBooks = async (query) => {
     try {
       setLoading(true);
-      const response = await axios.get(`http://localhost:5000/api/book/fetch?searchTerm=${query}`);
+      const response = await axios.get(`/api/book/fetch?searchTerm=${query}`);
       setBooks(response.data);
     } catch (error) {
       console.error('Error fetching books:', error.message);
