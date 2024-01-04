@@ -20,7 +20,7 @@ app.use(express.static(path.join(__dirname, '../frontend/build')));
 app.use('/api/user', userRoutes);
 app.use('/api/book', bookRoutes);
 
-mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(process.env.MONGODB_URI)
   .then(() => {
     console.log('Connected to MongoDB');
     //seedDummyData(); // Call the seeding function
